@@ -43,4 +43,4 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 ```
 Type yes and you will be asked for a password, which you should have already reseted and sfter inputing it, it's going to invisible you should get the following screen. **Congratulations** you have conected remotely
 
-![image]()
+![image](RemoteConect.png)
