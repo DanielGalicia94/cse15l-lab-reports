@@ -28,4 +28,4 @@ cs15lsp23**@ieng6.ucsd.edu, the ** will be replaced with your ID but moving on.
 After there is another step for us windows users downloading git bash wich can be done at this [link](https://gitforwindows.org/)
 After donloading that we can finally open it on vscode and open a terminal using Ctrl+Shift+` or using the terminal menu in vscode the en result is this
 
-![image]()
+![image](TerminalOnline.png)
