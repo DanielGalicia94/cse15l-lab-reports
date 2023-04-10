@@ -22,10 +22,25 @@ With that you are done with the first step, unfortunatly this is where things ge
 ## Remote connecting 
 
 Here comes the likely the most complicated part remote connecting, first we have getting your id for your email that will loke like this:
-cs15lsp23**@ieng6.ucsd.edu, the ** will be replaced with your ID but moving on.
+cs15lsp23**@ieng6.ucsd.edu, the ** will be replaced with your ID but moving on. You will need to reset your password for that, instead of making my own tutorial here is one already made: [link](https://drive.google.com/file/d/17IDZn8Qq7Q0RkYMxdiIR0o6HJ3B5YqSW/view)
 > You can get your specific ID by using the following [link](https://sdacs.ucsd.edu/~icc/index.php)
  
 After there is another step for us windows users downloading git bash wich can be done at this [link](https://gitforwindows.org/)
 After donloading that we can finally open it on vscode and open a terminal using Ctrl+Shift+` or using the terminal menu in vscode the en result is this
 
 ![image](TerminalOnline.png)
+
+From there you shall need to input the following code:
+> ssh cs15lsp23**@ieng6.ucsd.edu, the ** will be replaced with your ID
+
+From there since it's the first time you loged in you will receive the following message
+
+``` 
+The authenticity of host 'ieng6.ucsd.edu (128.54.70.238)' can't be established.
+RSA key fingerprint is SHA256:ksruYwhnYH+sySHnHAtLUHngrPEyZTDl/1x99wUQcec.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+```
+Type yes and you will be asked for a password, which you should have already reseted and sfter inputing it, it's going to invisible you should get the following screen. **Congratulations** you have conected remotely
+
+![image]()
