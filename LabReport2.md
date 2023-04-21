@@ -10,3 +10,7 @@ So without any further ado:
 ![image](https://pbs.twimg.com/media/Frl-nVoWcAI6lPF.jpg)
 
 ---
+## The Webserver
+Normally creating a web server from scratch is a bit difficult as a beginner to coding is pretty difficult as I have no idea how to even start one.
+
+Fortunately there is code for a web server in Lab 2 so, time to commandeer some code.
