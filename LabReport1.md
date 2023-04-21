@@ -2,9 +2,9 @@
 ## Welcome to my first lab report 
 
 We are going to today cover how to:
-1) Install VS Code
-2) How to remote connect to the UCSD servers
-3) Try some commands
+1. Install VS Code
+2. How to remote connect to the UCSD servers
+3. Try some commands
 
 ---
 ## Instaling the VS Code 
@@ -29,8 +29,8 @@ The ** will be replaced with your ID but moving on. You will need to reset your 
 > You can get your specific ID by using the following [link](https://sdacs.ucsd.edu/~icc/index.php)
 
 After there is another step for us windows users downloading git bash wich can be done at this [link](https://gitforwindows.org/)
-After donloading that we can finally open it on vscode and open a terminal using Ctrl+Shift+` or using the terminal menu in vscode the en result is this
-`
+After donloading that we can finally open it on vscode and open a terminal using Ctrl+Shift+` or using the terminal menu in vscode the end result is this
+
 ![image](TerminalOnline.png)
 
 From there you shall need to input the following code:
@@ -67,5 +67,8 @@ cat /home/linux/ieng6/cs15lsp23/public/hello.txt
 
 > Note: To end the remote conection type, exit
 
-As said before very fun here is a picture of my comand window running code
+As said before very fun stuff
+
+Here is a picture of my comand window running code
+
 ![pic](https://user-images.githubusercontent.com/56609916/230992768-b6b67f71-8dd8-4aa0-8db8-f4b9927fa70b.png)
