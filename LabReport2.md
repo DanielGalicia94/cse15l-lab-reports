@@ -105,3 +105,39 @@ static void reverseInPlace(int[] arr) {
   }
 ```
 
+While it has good starting point it has some fundamental flaws:
+
+First of all, for what it's trying to do, it needs a placeholder that will take the earlier object and store it, because as it stands now when the top of the list gets moved in the bottom counterpart the bottom part disappears forever, which is not good.
+
+Second of all it needs a second function that will copy the placeholder value to it’s respective part of the array.
+
+Lastly we need to half the length of the for loop as if we put the arrays length it will first reverse the array and then just flip it back.
+
+With all of those corrections the code looks like this:
+```
+static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length/2; i += 1) {
+      int placeHolder = arr[i];
+      arr[i] = arr[arr.length - i - 1];
+      arr[arr.length - i - 1] = placeHolder;
+    }
+  }
+```
+Testing the code one more time yields this result:
+![image](https://user-images.githubusercontent.com/56609916/233812032-88be8a5b-1dbb-46c1-b979-91a56bd63c17.png)
+
+> Once again I must ask you to ignore the other 2 tests that were successful
+
+---
+## Things I learned
+
+Compared to the other parts of this lab report this one will be short and sweet:
+
+There are 2 things that I stood out to me on lab 3:
+1. Test small
+2. Test everything
+
+What I mean by test small is that test on small data sets as if something doesn't work out when it's small it's most likely not going to work when it's a big data set.
+The second one of testing everything means that in some of the things such as linked lists, there are several components that are updated when you use a method, so in those cases tests that everything gets updated. 
+
+With all of that this lab report has come to an end, stay hydrated and good luck with whatever you are currently doing.
