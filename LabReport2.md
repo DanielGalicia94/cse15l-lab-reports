@@ -53,6 +53,55 @@ You know what let's also add:
 
 If I understand this correctly, whenever we get to this website we use the handle method and then handleRequest, or I could be wrong but from looking at the code that’s my best guess.
 
+As for arguments like I said before it seems complicated. One of the arguments is an url, that passesthrough the handleRequest and then stuff happens that I don't understand.  As for the feilds the only ones that seem relevent to me are the hello and string feild's I implemented, one being the welcome messeaga and the other being a string that get's updated
 
+As for the ones that change well, the thing that changes is the url path and query that are inputted, and the string who gets updated depending on what is in, in this case both are uptated due to the query I have inputed
 
+---
+## Debugging 101
+
+For debugging 101 I'm simply going to focus on the array methods and specifically the reverseInPlace method:
+This one here:
+```
+static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = arr[arr.length - i - 1];
+    }
+  }
+```
+With this in mind we must realize that this program in it's current form, as the cool hip kids will say, is very scuffed. 
+> I have already figured out so the screenshot might have some extra code than was shown here as I had to suppress all the corrections I did with comments
+
+The top test will work the bottom one shall not work
+```
+import static org.junit.Assert.*;
+import org.junit.*;
+
+public class ArrayTests {
+        @Test 
+	public void testReverseInPlace() {
+                // This one will work
+                int[] input1 = { 3 };
+                ArrayExamples.reverseInPlace(input1);
+                assertArrayEquals(new int[]{ 3 }, input1);
+                // This one will fail the test
+                int[] input2 = {1,2,3,4,5};
+                ArrayExamples.reverseInPlace(input2);
+                assertArrayEquals( new int[]{5,4,3,2,1}, input2);
+}
+```
+This is the picture of the error, as you can see there appears to be a 4 when a 2 was expected meaning that the list wasn't reversed correctly
+![image](https://user-images.githubusercontent.com/56609916/233751700-1e0e1ac5-e813-42e4-a2c7-b9049c225349.png)
+> Ignore the other 2 tests they are for a different part of the lab
+
+So what happened?
+
+What happened was that the code we have:
+```
+static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = arr[arr.length - i - 1];
+    }
+  }
+```
 
