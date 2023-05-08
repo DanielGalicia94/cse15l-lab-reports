@@ -17,7 +17,16 @@ Fortunately there is code for a web server in Lab 2 so, time to commandeer some 
 I created a new file called StringServer and then modified the code from the NumberServer file in order to create my web server. Besides the name of the file and the code presented everything else is pretty much the same.
 
 ```
-public String handleRequest(URI url) {
+import java.io.IOException;
+import java.net.URI;
+
+class Handler implements URLHandler {
+    // The one bit of state on the server: a number that will be manipulated by
+    // various requests.
+    String hello = "Welcome to my website for the lab report\n";
+    String string = "";
+
+    public String handleRequest(URI url) {
         if (url.getPath().equals("/")) {
             return hello + string;
         } else if (url.getPath().equals("/increment")) {
@@ -27,14 +36,28 @@ public String handleRequest(URI url) {
             System.out.println("Path: " + url.getPath());
             if (url.getPath().contains("/add-message")) {
                 String[] parameters = url.getQuery().split("=");
-                if (parameters[0].equals("count")) {
-                    string += parameters[1] + "/n";
+                if (parameters[0].equals("s")) {
+                    string += parameters[1] + "\n";
                     return hello + string;
                 }
             }
             return "404 Not Found!";
         }
     }
+}
+
+public class StringServer {
+    public static void main(String[] args) throws IOException {
+        if(args.length == 0){
+            System.out.println("Missing port number! Try any number between 1024 to 49151");
+            return;
+        }
+
+        int port = Integer.parseInt(args[0]);
+
+        Server.start(port, new Handler());
+    }
+}
 ```
 With that here we go here is my default page:
 ![image](https://user-images.githubusercontent.com/56609916/233745834-a51ff56f-ba67-4fa8-a612-87f9d20519de.png)
@@ -51,11 +74,22 @@ You know what let's also add:
 ```
 ![image](https://user-images.githubusercontent.com/56609916/233746584-7d900c20-eb9d-460f-8218-9d06d7dd7cce.png)
 
-If I understand this correctly, whenever we get to this website we use the handle method and then handleRequest, or I could be wrong but from looking at the code that’s my best guess.
+If I understand this correctly, whenever we get to this website we use the handle method which in turn uses thr handleRequest inside the string server in order to update the server depending on the url.
 
-As for arguments like I said before it seems complicated. One of the arguments is an url, that passesthrough the handleRequest and then stuff happens that I don't understand.  As for the feilds the only ones that seem relevent to me are the hello and string feild's I implemented, one being the welcome messeaga and the other being a string that get's updated
+As for argument, focusing on the StringServer file, one of the arguments is an url that passes through the handleRequest. When someone, note I don’t say me as I could run this on a server and have someone else access it. The other one is the url that you type in, but I will talk about that later. As for the fields the only ones that seem relevant to me are the hello and stringfield's I implemented, one being the welcome message and the other being a string that gets updated. The other ones that are important but are not used specifically in the StringServer file but are used in the Server file are, the field handler which is the one that starts everything and is the one updated every time somebody visits the page and the port number, which is the one that decides where in the server this website shall be run.
 
-As for the ones that change well, the thing that changes is the url path and query that are inputted, and the string who gets updated depending on what is in, in this case both are uptated due to the query I have inputed
+Anyways moving on to the url, which is the one that updates the web server. Whenever we access the webpage we call the good ol handle method which in turn uses the handleRequest in order to update the server. From there the handleRequest, hR in short, uses the getPath method which get’s the path of the url, see picture below.
+
+![image](https://user-images.githubusercontent.com/56609916/236732766-64e00864-3ebf-4c53-90a0-b07d062adcc7.png)
+
+Afterwards depending on the path it does a few things. 
+
+1. If the path is empty then it will just display the whatever words where stored in the string field
+2. If the path is ```/increment``` then the whatever contents on the string are doubled and then displayed 
+3. If the path is ```/add-message``` the it will add the string in the query and display the screen with the new words, again I will focus on this more later
+4. Finally if the path aren’t any of these it will display the classic error of 404 not found
+
+Alright back on track with possibility 3, when the add message path is found things get a bit complicated, first it now has a query, look at the picture above for a reference. The url after the question mark should contain an ```s=<whatever string you want to insert here>``` first this part is divided into 2 parts with the equals sign being the separation point. From there the code checks that the first of the 2 parts is an ```s``` After it confirms that the first part is indeed an s it will add the second part as a new line to the string field. This part won’t need to be parsed as it is already a String, if we needed an int then we would need to parse it. This is what happens when the path is the add-message one.  
 
 ---
 ## Debugging 101
