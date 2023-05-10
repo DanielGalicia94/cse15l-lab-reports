@@ -121,9 +121,77 @@ technical/biomed/1468-6708-3-7.txt:          hypertension and prostatism [ 2 ] .
 
 This command over here I used quite a lot when practicing for the skill demo 1. It takes a word as its input and a directory and searches for all files containing the specific word and prints out their name. Mighty useful if, let's say, looking at the files given to practice your skill demo there are a bunch of files. By the sheer amount of those files you might think that the hidden task might be to search for a file containing a certain key word or phrase. But that’s just me 
 
+First example ```grep -rl "alpha" technical/ > rlEX1.txt``` this is searching for all the file names in the directory that contain the word alpha and then storing it into a text file.
+Output sample is the following:
+```
+technical/911report/chapter-13.4.txt
+technical/911report/chapter-13.5.txt
+technical/biomed/1468-6708-3-10.txt
+technical/biomed/1468-6708-3-7.txt
+technical/biomed/1471-2091-3-14.txt
+technical/biomed/1471-2105-3-12.txt
+technical/biomed/1471-2105-3-14.txt
+technical/biomed/1471-2105-3-18.txt
+technical/biomed/1471-2105-3-2.txt
+technical/biomed/1471-2105-3-24.txt
+technical/biomed/1471-2105-3-26.txt
+technical/biomed/1471-2105-3-28.txt
+technical/biomed/1471-2105-3-34.txt
+technical/biomed/1471-2105-3-6.txt
+technical/biomed/1471-2121-3-13.txt
+```
+
+Second example ```grep -rl "fire" technical/plos/ > rlEX2.txt ``` you can see that we can narrow down the scope as we need it. Doing the exact same things as described above but on a smaller scope
+
+Full output:
+```
+technical/plos/journal.pbio.0020047.txt
+technical/plos/journal.pbio.0020054.txt
+technical/plos/journal.pbio.0020105.txt
+technical/plos/journal.pbio.0020146.txt
+technical/plos/journal.pbio.0020267.txt
+technical/plos/journal.pbio.0020302.txt
+technical/plos/journal.pbio.0020346.txt
+technical/plos/journal.pbio.0020400.txt
+technical/plos/pmed.0020208.txt
+technical/plos/pmed.0020209.txt
+```
 
 ---
 
 ## ```grep -<some param> "<someword>$"```
 
 What I’m focusing on here is the ```$``` as this makes an interesting pattern as it does whatever you put it to do except that the only difference is that the word is at the end. For example if searching for lines, then it will print out the lines that end with the word rather than outright contain it. Useful when you want to narrow down your search for the line.
+
+For the examples I'm going to recreate the ```-r``` comands we used for the lab
+
+Remexing to our needs example 1 is ```grep -r "base pair$" technical/biomed > endEX1.txt``` Which will give you all the lines in ```technical/biomed``` that end with base pair
+
+Output: 
+```
+technical/biomed/1471-2105-4-27.txt:          to, and interrogates the expression of a 25 base pair
+technical/biomed/1471-213X-1-4.txt:          the bpA. These two enzymes are rare eight base pair
+technical/biomed/1471-2164-2-4.txt:        this assay to genotype any SNP regardless of the base pair
+technical/biomed/1471-2180-3-13.txt:          loop a and stem 2 (Figure 12). Compensatory base pair
+technical/biomed/1471-2202-3-7.txt:        complex process that involves generating a 9 base pair
+technical/biomed/1471-2229-2-3.txt:        conducted at high stringency with a 1700 base pair
+technical/biomed/1472-6750-1-13.txt:        748 were screened along with all possible single base pair
+```
+
+Now we for example 2, which is ```grep -r "base pair$" technical/plos > endEX2.txt``` Which will give you all the lines in ```technical/plos``` that end with base pair
+
+And our grand output is:
+```
+
+```
+Yeah apperently there are no files in plos that end with base pair, but we can now safely say that biomed contains the most lines that end with "base pair"
+
+---
+
+## With that everything comes to an end 
+
+Thank you for reading my report and ramblings
+
+and until next time
+
+![image](https://github.com/DanielGalicia94/cse15l-lab-reports/assets/56609916/53ae602a-2a5e-4f52-93fa-11188752be37)
