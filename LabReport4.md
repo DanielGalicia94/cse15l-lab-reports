@@ -27,3 +27,18 @@ Since I had already logged in the ing6 before because it was acting kind of weir
 Since my log in command was up once in my history of my terminal I simply hit the up key and enter to log in once again, Which, inturn leads me to to this point in my terminal.
 
 ![image](https://github.com/DanielGalicia94/cse15l-lab-reports/assets/56609916/51faf359-aa56-49f8-80c4-3e3d4af31ac7)
+
+With that step one is done
+
+---
+
+## Step 2: Clone your fork of the repository from your Github account
+
+Another easy step, I already have copied the link from the github repository meaning that in order to clone it I simply needed to paste in the clone command which I did by typing in the terminal:
+
+Inside the ```<Ctrl>v``` is ```git@github.com:DanielGalicia94/lab7.git``` 
+
+```git clone <Ctrl>v```
+
+Doing that we get to this point: 
+![image](https://github.com/DanielGalicia94/cse15l-lab-reports/assets/56609916/4eb4a25c-5670-4ca3-816c-1f4db342b90a)
