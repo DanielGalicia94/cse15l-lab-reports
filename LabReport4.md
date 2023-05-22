@@ -85,4 +85,36 @@ Which leads us to this image:
 ![image](https://github.com/DanielGalicia94/cse15l-lab-reports/assets/56609916/0d104c51-2578-45b3-b8ad-4f4d214c8c28)
 
 Finally we get to the last line ```<shift>;wq``` which is the command in order to save and quit vim mode. After all of this we are left with this screen:
+
 ![image](https://github.com/DanielGalicia94/cse15l-lab-reports/assets/56609916/b4d9713c-6f94-45eb-aaf4-b2e3aaf91626)
+
+---
+
+# Step 5: Run the tests, demonstrating that they now succeed
+
+Now that we are back in our normal terminal in order to run the test we do the following:
+
+```<up><up><enter>```
+
+I use this command, since the ```bash test.sh``` is up in my history, or the second command for step 3, is the one required to run the tests
+
+With that we get this screen:
+![image](https://github.com/DanielGalicia94/cse15l-lab-reports/assets/56609916/d4286c36-fa23-4f7b-bdd3-3f64fd5f4f5a)
+
+---
+
+## Step 6: Commit and push the resulting change to your Github account (you can pick any commit message!)
+
+We use the following commands:
+```
+git add Main.java<enter>
+git commit -m "update"<enter>
+git push
+```
+The ```git add``` command adds a change in the working directory to the staging area. Meaning that the change we made is being prepped to be pushed. 
+
+The ```git commit``` command captures a snapshot of the project's currently staged changes. The ```-m``` simply adds a message to be recorded when you finally push. Speaking more on the commit command it will cause it to save the changes and that be the change to be pushed when the command is given.
+
+The ```git push``` command will finally push all the changes that were added to through the add command earlier to the fork.
+
+
