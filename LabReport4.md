@@ -107,14 +107,21 @@ With that we get this screen:
 
 We use the following commands:
 ```
-git add Main.java<enter>
+git add L<tab>.j<tab><enter>
 git commit -m "update"<enter>
-git push
+git push origin
 ```
-The ```git add``` command adds a change in the working directory to the staging area. Meaning that the change we made is being prepped to be pushed. 
+The ```git add``` command adds a change in the working directory to the staging area. Meaning that the change we made is being prepped to be pushed. Again the ```<tab>``` is used to autofill the command line.
 
 The ```git commit``` command captures a snapshot of the project's currently staged changes. The ```-m``` simply adds a message to be recorded when you finally push. Speaking more on the commit command it will cause it to save the changes and that be the change to be pushed when the command is given.
 
-The ```git push``` command will finally push all the changes that were added to through the add command earlier to the fork.
+The ```git push``` command will finally push all the changes that were added to through the add command earlier to the fork, which is the origin.
 
+With all of that we finally get this screen: 
+![image](https://github.com/DanielGalicia94/cse15l-lab-reports/assets/56609916/80e01c07-2d97-41b7-bd9f-43ab397e405d)
+
+Now looking in the fork we can indeed see that the changes were made:
+![image](https://github.com/DanielGalicia94/cse15l-lab-reports/assets/56609916/155c85b6-48bc-44f5-b8a2-196c20127442)
+
+With that this lab report is finished.
 
